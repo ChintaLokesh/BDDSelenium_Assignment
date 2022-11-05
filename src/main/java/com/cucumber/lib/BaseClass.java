@@ -41,8 +41,12 @@ public class BaseClass {
 		}
 		else if(System.getProperty("browserName").equalsIgnoreCase("chrome"))
 		{
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--remote-debugging-port=9222");
+			options.setHeadless(true);
 			WebDriverManager.chromedriver().setup();
-			driver= new ChromeDriver();
+			driver= new ChromeDriver(options);
+
 		} 
 		return driver;
 	}
