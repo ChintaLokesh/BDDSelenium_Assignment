@@ -35,11 +35,13 @@ public class GenericLibrary {
 	}
 	
 	public static  void waitUntilPageIsLoaded(WebDriver driver,int seconds) {
-		driver.manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 	
 	public static  void waitUntilElementIsDisplayed(WebDriver driver,By by) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		//WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 				wait.until(ExpectedConditions.presenceOfElementLocated(by));
 	}
 	

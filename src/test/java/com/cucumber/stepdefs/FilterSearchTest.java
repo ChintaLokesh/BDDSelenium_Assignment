@@ -8,6 +8,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Properties;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -126,17 +127,6 @@ public class FilterSearchTest {
 
 		System.out.println(homePage_PageObj.getMayBeLaterButton().size());
 
-		// code to close the sign up popup if present at the bottom of the screen
-
-//		if ((homePage_PageObj.getMayBeLaterButton().size() > 1)
-//				&& (homePage_PageObj.getMayBeLaterButton().get(0).isDisplayed())
-//				&& (homePage_PageObj.getMayBeLaterButton().get(0).isEnabled())) {
-//			screenshot = GenericLibrary.takeScreenshot(driver, "signupPopup");
-//			test.log(Status.INFO, "sign up popup Display");
-//			test.log(Status.INFO, "details",
-//					MediaEntityBuilder.createScreenCaptureFromPath(screenshot.toString()).build());
-//			homePage_PageObj.getMayBeLaterButton().get(0).click();
-//		}
 		closeSignUPPopup(driver);
 		
 		Thread.sleep(2000);
@@ -172,11 +162,6 @@ public class FilterSearchTest {
 
 				// code to close the sign up popup if present at the bottom of the screen
 
-//				if (homePage_PageObj.getMayBeLaterButton().size() > 0
-//						&& homePage_PageObj.getMayBeLaterButton().get(0).isDisplayed()
-//						&& homePage_PageObj.getMayBeLaterButton().get(0).isEnabled()) {
-//					homePage_PageObj.getMayBeLaterButton().get(0).click();
-//				}
 				closeSignUPPopup(driver);
 				screenshot = GenericLibrary.takeScreenshot(driver, "signupPopup_01");
 				test.log(Status.INFO, "sign up popup Display1");
@@ -284,7 +269,6 @@ public class FilterSearchTest {
 	@After
 	public void tearDown() {
 		extent.flush();
-		// driver.quit();
 	}
 	
 	public static void closeSignUPPopup(WebDriver driver) throws Exception
@@ -297,7 +281,8 @@ public class FilterSearchTest {
 			test.log(Status.INFO, "sign up popup Display");
 			test.log(Status.INFO, "details",
 					MediaEntityBuilder.createScreenCaptureFromPath(screenshot.toString()).build());
-			homePage_PageObj.getMayBeLaterButton().get(0).click();
+			System.out.println("Get May Be later button text is: "+homePage_PageObj.getMayBeLaterButton().get(0).getText());
+			((JavascriptExecutor)driver).executeScript("arguments[0].click();", homePage_PageObj.getMayBeLaterButton().get(0));
 		}
 	}
 }

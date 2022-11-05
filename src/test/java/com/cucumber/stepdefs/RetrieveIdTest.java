@@ -7,7 +7,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Properties;
 import org.testng.Assert;
-import com.aventstack.extentreports.Status;
 import com.cucumber.lib.Reporter;
 import com.cucumber.pojo.Currency;
 import com.cucumber.pojo.Data;
@@ -36,7 +35,7 @@ public class RetrieveIdTest extends Reporter{
 	protected List list;
 	protected static int tagCount = 0;
 	protected Properties prop;
-	
+
 	
 	
 	@Given("^coinmarketcap base uri is available$")
@@ -117,7 +116,8 @@ public class RetrieveIdTest extends Reporter{
 			System.out.println(resObj.getBody().asString());
 			System.out.println(resObj.getStatusCode());
 			Assert.assertEquals(resObj.getStatusCode(), 200);
-
+			jsonPathEvaluator = resObj.jsonPath();
+			System.out.println("Converted price is: "+jsonPathEvaluator.get("data.quote." + convert_id + ".price").toString());
 		}
 	}
 
@@ -132,7 +132,7 @@ public class RetrieveIdTest extends Reporter{
 		System.out.println(resObj.getBody().asString());
 
 		Assert.assertEquals(resObj.getStatusCode(), 200);
-		JsonPath jsonPathEvaluator = resObj.jsonPath();
+		jsonPathEvaluator = resObj.jsonPath();
 
 		Assert.assertEquals(jsonPathEvaluator.get("data." + id + ".id").toString(), id);
 		Assert.assertEquals(jsonPathEvaluator.get("data." + id + ".logo").toString(), logo);
