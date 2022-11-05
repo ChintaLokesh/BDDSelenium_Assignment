@@ -25,6 +25,7 @@ jobs:
           ls -a
           mvn clean test -DbrowserName=chrome
           ls -a
+          git add screenshots
           git add Reports
           git config --global  user.email "lokeech@gmail.com"
           git config --global  user.name  "ChintaLokesh"
