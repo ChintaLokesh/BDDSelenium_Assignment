@@ -42,8 +42,8 @@ public class BaseClass {
 		else if(System.getProperty("browserName").equalsIgnoreCase("chrome"))
 		{
 			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--remote-debugging-port=9222");
-			options.setHeadless(true);
+			//options.addArguments("--headless");
+			options.addArguments("--headless", "--window-size=1920,1200");
 			WebDriverManager.chromedriver().setup();
 			driver= new ChromeDriver(options);
 
