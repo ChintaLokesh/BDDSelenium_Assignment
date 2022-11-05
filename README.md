@@ -47,6 +47,14 @@ To Run all the test scripts use maven command
 
 **For Chrome Browser**  : **mvn clean test -DbrowserName=chrome**
 
+
+
+
+mvn command :  " mvn clean test "  will trigger the test scripts using edge browser 
+
+
+
+
 (OR)
 
 
@@ -105,7 +113,7 @@ Screenshtots are given below for reference
 
 ![image](https://user-images.githubusercontent.com/22152001/200113373-912eb7a5-200d-4397-9d3d-74c48249965b.png)
 
-**Screenshot5**  - "**github action Completion Screen**"
+**Screenshot5**  - "**Github action Completion Screen**"
 
 
 
@@ -120,7 +128,16 @@ NOTE : please copy and paste the links above to view the workflow navigation scr
 
 After Successfull execution , "Reports" folder is automatically committed and can view the results by downloading the " .html " files 
 
-**Screenshot6** - " **Report folder got updated** "
+
+"screenshot6" - Test Execution status showing as  " Passed "
+
+
+
+
+![image](https://user-images.githubusercontent.com/22152001/200117032-a10b79b7-d4b2-47b5-b689-6866b065da5c.png)
+
+
+**Screenshot6** - " **Reports folder got updated** "
 
 
 
