@@ -38,13 +38,17 @@ Github Action workflow is created under  " .github/workflows " folder
 
 Navigate to  " Actions " tab , select  " Sanity_BDD_Cucumber " --> click on  " Run Workflow " {displayed on right side of the screen }
 
-![image](https://user-images.githubusercontent.com/22152001/200112802-b4393ce4-300b-43e1-88c2-0e50fabb9d9e.png) -> Screenshot1
+Screenshot1 -- > ![image](https://user-images.githubusercontent.com/22152001/200112802-b4393ce4-300b-43e1-88c2-0e50fabb9d9e.png) ->
 
-![image](https://user-images.githubusercontent.com/22152001/200112916-a295023c-b32d-46e3-80e7-d0f0bd48f239.png) -> Screenshot2
+Screenshot2 -- > ![image](https://user-images.githubusercontent.com/22152001/200112916-a295023c-b32d-46e3-80e7-d0f0bd48f239.png) 
 
-![image](https://user-images.githubusercontent.com/22152001/200112947-c34a7417-1371-4b8b-950b-31ea1e114ef5.png) -> Screenshot3
+Screenshot3 -- > ![image](https://user-images.githubusercontent.com/22152001/200112947-c34a7417-1371-4b8b-950b-31ea1e114ef5.png) 
 
-![image](https://user-images.githubusercontent.com/22152001/200112970-a2b70184-2de2-4a92-b8b0-2c85f6752324.png)  -> Screenshot4
+Screenshot4 -- > ![image](https://user-images.githubusercontent.com/22152001/200113373-912eb7a5-200d-4397-9d3d-74c48249965b.png)
+
+Screenshot5 -- > ![image](https://user-images.githubusercontent.com/22152001/200113411-1339d995-983d-4871-9c10-c318779c9884.png)
+
+
 
 NOTE : please copy and paste the links above to view the workflow navigation screenshots  
 
@@ -52,6 +56,9 @@ NOTE : please copy and paste the links above to view the workflow navigation scr
 
 
 After Successfull execution , "Reports" folder is automatically committed and can view the results by downloading the " .html " files 
+
+Screenshot6 -- >![image](https://user-images.githubusercontent.com/22152001/200113460-aab59ce7-7fe4-440b-9c63-e6a1692b65bb.png)
+
 
 
 
