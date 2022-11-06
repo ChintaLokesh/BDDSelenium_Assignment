@@ -55,7 +55,8 @@ public class RetrieveIdTest extends Reporter{
 
 		// provide the authorization key as Header
 		
-		specificationObj.header("X-CMC_PRO_API_KEY", "a9487c5d-aee2-4730-83c2-93b34dc1b93e");
+		//specificationObj.header("X-CMC_PRO_API_KEY", "a9487c5d-aee2-4730-83c2-93b34dc1b93e");
+		specificationObj.header(prop.getProperty("AUTHORIZATION_KEY"), prop.getProperty("AUTHORIZATION_VALUE"));
 	}
 
 	@Then("^Retrieve the Id for name \"([^\"]*)\" with symbol \"([^\"]*)\"$")
