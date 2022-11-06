@@ -66,6 +66,32 @@ Once the project is cloned , open the file " src\test\java\com\cucumber\runner\T
 Once the execution is completed , Extent Report along with the UI screenshots  are stored in " Reports " folder
 
 
+NOTE : To make the scripts work using Github Actions , ChromeOptions property is set  to headless
+
+
+![image](https://user-images.githubusercontent.com/22152001/200149712-af85efc1-4698-47a6-b9a7-47004f50598c.png)
+
+
+
+Automation Extent Report for Frontend Task1
+
+
+
+![image](https://user-images.githubusercontent.com/22152001/200149687-02311c83-9dae-478d-a0ea-b4a43f0d9f88.png)
+
+
+
+
+Automation Extent Report for Frontend Task2
+
+
+
+![image](https://user-images.githubusercontent.com/22152001/200149611-13ec7a5d-b74a-40c6-844e-9a911cecb506.png)
+
+
+![image](https://user-images.githubusercontent.com/22152001/200149673-f6fbee35-4dec-435e-98cf-9bcaa3fe510b.png)
+
+
 
 
 **In addition** : Automation is integrated with github actions 
