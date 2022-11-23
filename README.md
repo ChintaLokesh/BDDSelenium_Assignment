@@ -68,6 +68,8 @@ Once the execution is completed , Extent Report along with the UI screenshots  a
 
 NOTE : To make the scripts work using Github Actions , ChromeOptions property is set  to headless
 
+Automation Extent Report is implemented to view the screenshots after Execution
+
 
 ![image](https://user-images.githubusercontent.com/22152001/200149712-af85efc1-4698-47a6-b9a7-47004f50598c.png)
 
@@ -147,7 +149,8 @@ Screenshtots are given below for reference
 
 
 
-NOTE : please copy and paste the links above to view the workflow navigation screenshots  
+![image](https://user-images.githubusercontent.com/22152001/200149971-80641c34-c5be-4ee4-a657-7da42d263cd1.png)
+
 
 
 
@@ -163,7 +166,15 @@ After Successfull execution , "Reports" folder is automatically committed and ca
 ![image](https://user-images.githubusercontent.com/22152001/200117032-a10b79b7-d4b2-47b5-b689-6866b065da5c.png)
 
 
-**Screenshot6** - " **Reports folder got updated** "
+
+
+**Screenshot7** - " **screenshots folder got updated in Github Repo** "
+
+
+![image](https://user-images.githubusercontent.com/22152001/200149884-de3bf368-ac75-474f-ab79-b546cc5cf36e.png)
+
+
+**Screenshot8** - " **Reports folder got updated in Github Repo** "
 
 
 
