@@ -20,6 +20,7 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.cucumber.lib.BaseClass;
+import com.cucumber.lib.BusinessLibrary;
 import com.cucumber.lib.GenericLibrary;
 import com.cucumber.objectrepo.FilterPage;
 import com.cucumber.objectrepo.HomePage;
@@ -102,7 +103,7 @@ public class FilterSearchTest {
 		test.log(Status.INFO, "Home Page After Next Button Click");
 		screenshot = GenericLibrary.takeScreenshot(driver, "homePageNextButton");
 		test.log(Status.INFO, "details", MediaEntityBuilder.createScreenCaptureFromPath(screenshot.toString()).build());
-		// Thread.sleep(2000);
+		 Thread.sleep(2000);
 		Assert.assertTrue(GenericLibrary.waitForElementToBeDisplayedUsingFluentWait(driver,
 				homePage_PageObj.getHomePageGotItButton()));
 		System.out.println("status is:" + status);
@@ -110,10 +111,12 @@ public class FilterSearchTest {
 		// Got it Button click present in Home page
 
 		homePage_PageObj.getHomePageGotItButton().click();
+		Thread.sleep(2000);
 		screenshot = GenericLibrary.takeScreenshot(driver, "homePageGotItButton");
 		test.log(Status.INFO, "Home Page Got IT Button After Click");
 		test.log(Status.INFO, "details", MediaEntityBuilder.createScreenCaptureFromPath(screenshot.toString()).build());
 		// Thread.sleep(3000);
+		BusinessLibrary.closeSignUPPopup(driver,test);
 		Assert.assertTrue(
 				GenericLibrary.waitForElementToBeDisplayedUsingFluentWait(driver, homePage_PageObj.getFilterButton()));
 
@@ -127,7 +130,7 @@ public class FilterSearchTest {
 
 		System.out.println(homePage_PageObj.getMayBeLaterButton().size());
 
-		closeSignUPPopup(driver);
+		BusinessLibrary.closeSignUPPopup(driver,test);
 		
 		Thread.sleep(2000);
 
@@ -162,13 +165,13 @@ public class FilterSearchTest {
 
 				// code to close the sign up popup if present at the bottom of the screen
 
-				closeSignUPPopup(driver);
+				BusinessLibrary.closeSignUPPopup(driver,test);
 				screenshot = GenericLibrary.takeScreenshot(driver, "signupPopup_01");
 				test.log(Status.INFO, "sign up popup Display1");
 				test.log(Status.INFO, "details",
 						MediaEntityBuilder.createScreenCaptureFromPath(screenshot.toString()).build());
 				
-				closeSignUPPopup(driver);
+				BusinessLibrary.closeSignUPPopup(driver,test);
 				filterPage_PageObj.getApplyFilter().click();
 				break;
 			}
@@ -269,20 +272,21 @@ public class FilterSearchTest {
 	@After
 	public void tearDown() {
 		extent.flush();
+		
 	}
 	
-	public static void closeSignUPPopup(WebDriver driver) throws Exception
-	{
-		
-		if ((homePage_PageObj.getMayBeLaterButton().size() > 0)
-				&& (homePage_PageObj.getMayBeLaterButton().get(0).isDisplayed())
-				&& (homePage_PageObj.getMayBeLaterButton().get(0).isEnabled())) {
-			screenshot = GenericLibrary.takeScreenshot(driver, "signupPopup");
-			test.log(Status.INFO, "sign up popup Display");
-			test.log(Status.INFO, "details",
-					MediaEntityBuilder.createScreenCaptureFromPath(screenshot.toString()).build());
-			System.out.println("Get May Be later button text is: "+homePage_PageObj.getMayBeLaterButton().get(0).getText());
-			((JavascriptExecutor)driver).executeScript("arguments[0].click();", homePage_PageObj.getMayBeLaterButton().get(0));
-		}
-	}
+//	public static void closeSignUPPopup(WebDriver driver) throws Exception
+//	{
+//		
+//		if ((homePage_PageObj.getMayBeLaterButton().size() > 0)
+//				&& (homePage_PageObj.getMayBeLaterButton().get(0).isDisplayed())
+//				&& (homePage_PageObj.getMayBeLaterButton().get(0).isEnabled())) {
+//			screenshot = GenericLibrary.takeScreenshot(driver, "signupPopup");
+//			test.log(Status.INFO, "sign up popup Display");
+//			test.log(Status.INFO, "details",
+//					MediaEntityBuilder.createScreenCaptureFromPath(screenshot.toString()).build());
+//			System.out.println("Get May Be later button text is: "+homePage_PageObj.getMayBeLaterButton().get(0).getText());
+//			((JavascriptExecutor)driver).executeScript("arguments[0].click();", homePage_PageObj.getMayBeLaterButton().get(0));
+//		}
+//	}
 }

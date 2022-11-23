@@ -19,7 +19,7 @@ public class FilterPage {
 	@FindBy(xpath="//button[text()='Show results']")
 	private WebElement showFilterOption;
 	
-	@FindBy(xpath="//table[@class='h7vnx2-2 cgeQEz cmc-table  ']//tbody//tr")
+	@FindBy(xpath="//table[contains(@class,'cmc-table')]//tbody//tr")
 	private List<WebElement> resultList;
 	
 	@FindBy(xpath="//button[text()='Apply Filter']")
@@ -105,11 +105,11 @@ public class FilterPage {
 	}
 
 
-	@FindBy(xpath="//table[@class='h7vnx2-2 cgeQEz cmc-table  ']//tbody//tr//td[4]//span")
+	@FindBy(xpath="//table[contains(@class,'cmc-table')]//tbody//tr//td[4]//span")
 	private List<WebElement> priceResultList;
 	
 	
-	@FindBy(xpath="//table[@class='h7vnx2-2 cgeQEz cmc-table  ']//tbody//td[8]//span[2]")
+	@FindBy(xpath="//table[contains(@class,'cmc-table')]//tbody//td[8]//span[2]")
 	private List<WebElement> marketCapResultList;
 	
 }

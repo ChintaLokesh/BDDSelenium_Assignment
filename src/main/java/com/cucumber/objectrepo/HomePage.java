@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage {
 
-	@FindBy(xpath= "//div[@class='sc-1hxnufv-4 dEpvVp hide_on_mobile_wrapper']//button[text()='Filters']")
+	@FindBy(xpath= "//div[contains(@class,'hide_on_mobile_wrapper')]//button[text()='Filters']")
 	private WebElement filterButton;
 	
 	@FindBy(xpath="//button[text()='Add Filter']")
@@ -23,19 +23,19 @@ public class HomePage {
 	@FindBy(xpath="//button[text()='Maybe later']")
 	private List<WebElement> MayBeLaterButton;
 	
-	@FindBy(xpath="//div[@class='sc-1prm8qw-0 dEHpSU table-control-page-sizer']//div")
+	@FindBy(xpath="//div[contains(@class,'table-control-page-sizer')]//div")
 	private WebElement dropDown;
 	
-	@FindBy(xpath="//*[@class='sc-1ebmiy2-0 juUwCn' and contains(text(),'100')]")
+	@FindBy(xpath="//*[contains(@class,'table-control-page-sizer')]//div[text()='100']")
 	private WebElement option_100;
 	
-	@FindBy(xpath="//*[@class='sc-1ebmiy2-0 juUwCn' and contains(text(),'50')]")
+	@FindBy(xpath="//*[contains(@class,'table-control-page-sizer')]//div[text()='50']")
 	private WebElement option_50;
 	
-	@FindBy(xpath="//*[@class='sc-1ebmiy2-0 juUwCn' and contains(text(),'20')]")
+	@FindBy(xpath="//*[contains(@class,'table-control-page-sizer')]//div[text()='20']")
 	private WebElement option_20;
 	
-	@FindBy(xpath="//table[@class='h7vnx2-2 cgeQEz cmc-table  ']//tbody//tr")
+	@FindBy(xpath="//table[contains(@class,'table')]//tbody//tr")
 	private List<WebElement> searchResultCount;
 	
 	

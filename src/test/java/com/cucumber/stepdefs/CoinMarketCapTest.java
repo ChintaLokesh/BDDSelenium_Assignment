@@ -19,6 +19,7 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.cucumber.lib.BaseClass;
+import com.cucumber.lib.BusinessLibrary;
 import com.cucumber.lib.GenericLibrary;
 import com.cucumber.objectrepo.HomePage;
 import com.cucumber.objectrepo.Login;
@@ -41,7 +42,7 @@ public class CoinMarketCapTest {
 	protected By byNextButton;
 	protected By byGotIT;
 	protected Login loginPageObj;
-	protected HomePage homePageObj;
+	protected static HomePage homePageObj;
 	protected static ExtentReports extent;
 	protected static ExtentSparkReporter spark;
 	protected static ExtentTest test;
@@ -49,6 +50,7 @@ public class CoinMarketCapTest {
 	protected Properties prop;
 	protected Calendar obj;
 	protected String date;
+//	protected static com.cucumber.objectrepo.HomePage homePage_PageObj;
 	
 	@Before
 	public void configure() throws FileNotFoundException, IOException {
@@ -77,6 +79,7 @@ public class CoinMarketCapTest {
 		extent.setSystemInfo("Name of the OS: ", nameOS);
 		extent.setSystemInfo("Version of the OS: ", versionOS);
 		extent.setSystemInfo("Architecture of The OS: ", architectureOS);
+		//homePage_PageObj = PageFactory.initElements(driver, HomePage.class);
 
 	}
 	
@@ -118,8 +121,10 @@ public class CoinMarketCapTest {
 		test.log(Status.INFO, "details", MediaEntityBuilder
 				.createScreenCaptureFromPath(screenshot.toString()).build());
 		homePageObj.getHomePageNextButton().click();
+		Thread.sleep(5000);
 		homePageObj.getHomePageGotItButton().click();
 		Thread.sleep(5000);
+		BusinessLibrary.closeSignUPPopup(driver,test);
 		homePageObj.getDropDown().click();
 		test.log(Status.INFO, "Drop down button is clicked to select the count 100/50/20 as option");
 		screenshot=GenericLibrary.takeScreenshot(driver,"homePageAfterSearch");
@@ -152,6 +157,22 @@ public class CoinMarketCapTest {
 	@After
 	public void tearDown()
 	{
+//		driver.quit();
 		extent.flush();
 	}
+	
+//	public  void closeSignUPPopup(WebDriver driver) throws Exception
+//	{
+//		//File screenshot;
+//		if ((homePageObj.getMayBeLaterButton().size() > 0)
+//				&& (homePageObj.getMayBeLaterButton().get(0).isDisplayed())
+//				&& (homePageObj.getMayBeLaterButton().get(0).isEnabled())) {
+//			screenshot = GenericLibrary.takeScreenshot(driver, "signupPopup");
+//			test.log(Status.INFO, "sign up popup Display");
+//			test.log(Status.INFO, "details",
+//					MediaEntityBuilder.createScreenCaptureFromPath(screenshot.toString()).build());
+//			System.out.println("Get May Be later button text is: "+homePageObj.getMayBeLaterButton().get(0).getText());
+//			((JavascriptExecutor)driver).executeScript("arguments[0].click();", homePageObj.getMayBeLaterButton().get(0));
+//		}
+//	}
 }
